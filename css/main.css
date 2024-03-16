@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    background-color: #F3F5FC;
+}
+
+header{
+    position: absolute;
+    z-index: 1000;
+    width: 64%;
+    height: auto;
+}
+header .logo{
+    margin: 40px 0 0 84px;
+    height: 48px;
+    width: auto;
+    background-color: transparent;
+}
+
+main{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+}
+main::after{
+    content: "";
+    clear: both;
+}
+.button{
+    font-size: 16px;
+    padding: 24px;
+    border-radius: 24px;
+}
+.button.primary{
+    border: 1px solid #0A3871;
+    background-color: #0A3871;
+    color: #FFFFFF;
+}
+.button.primary:hover{
+    background-color: #072953;
+}
+.button.secondary{
+    border: 1px solid #0A3871;
+    background-color: transparent;
+    color: #0A3871;
+}
+.button.secondary:hover{
+    background-color: #e8ebf8;
+}
+
+.inputContainer{
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding: 120px 0px 40px 160px;
+}
+.inputContainer .container{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 10px 0 32px 32px;
+}
+.inputContainer .container .data{
+    font-size: 32px;
+    width: 100%;
+    height: calc(100% - 110px);
+    resize: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.inputContainer .container .buttonContainer{
+    width: 100%;
+    text-align: center;
+}
+.inputContainer .container .buttonContainer .warning{
+    position: relative;
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0 10px 0;
+    padding-left: 20px;
+}
+.inputContainer .container .buttonContainer .warning::before{
+    content: url('../resources/images/warning.svg');
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.inputContainer .container .buttonContainer .button{
+    width: 40%;
+    min-width: 150px;
+    max-width: 340px;
+}
+.inputContainer .container .buttonContainer .button:first-child{
+    margin-right: 15px;
+}
+.inputContainer .container .buttonContainer .button:last-child{
+    margin-left: 15px;
+}
+
+.outputContainer{
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding: 40px;
+}
+.outputContainer .container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.1);
+
+    padding: 32px;
+    border-radius: 32px;
+
+    background: #FFFFFF;
+}
+.outputContainer .container .nodata{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.outputContainer .container .nodata .image{
+    width: 100%;
+    height: auto;
+}
+.outputContainer .container .nodata .title{
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+}
+.outputContainer .container .nodata .info{
+	width: 100%;
+    font-size: 16px;
+    line-height: 150%;
+    
+}
+.outputContainer .container .nodata.hidden{
+    display: none;
+    visibility: hidden;
+}
+.outputContainer .container .withdata{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+}
+
+.outputContainer .container .withdata.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.outputContainer .container .result{
+    font-size: 24px;
+    width: 100%;
+    height: calc(100% - 90px);
+    resize: none;
+    background: none;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
+.outputContainer .container .bottomButton{
+    text-align: center;
+}
+.outputContainer .container .bottomButton .button{
+    width: 100%;
+    max-width: 340px;
+    vertical-align: bottom;
+}
+
+
+@media (max-width: 1439px){
+    .inputContainer{
+        width: 63%;
+        padding: 120px 0px 40px 0px;
+    }
+    .outputContainer{
+        width: 37%;
+    }
+}
+
+@media (max-width: 767px){
+    header{
+        width: 100%;
+    }
+    header .logo{
+        margin: 30px 0 0 60px;
+        height: 40px;
+    }
+    .inputContainer{
+        float: none;
+        width: 100%;
+        padding: 90px 0px 0px 0px;
+    }
+    .inputContainer .container{
+        padding: 10px 32px 32px 32px;
+    }
+    .inputContainer .container .buttonContainer .button{
+        width: calc(50% - 15px);
+        max-width: 100%;
+    }
+    .outputContainer{
+        float: none;
+        width: 100%;
+        height: auto;
+        padding: 20px 40px 40px 40px;
+    }
+    .outputContainer .container .nodata .image{
+        display: none;
+    }
+    .outputContainer .container .result{
+        height: auto;
+        min-height: 80px;
+        margin-bottom: 32px;
+    }
+    .outputContainer .container .bottomButton .button{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 399px){
+    header .logo{
+        margin: 20px 0 0 50px;
+        height: 36px;
+    }
+    .inputContainer{
+        padding: 70px 0px 0px 0px;
+    }
+    .inputContainer .container .buttonContainer .button{
+        width: 100%;
+        max-width: 100%;
+    }
+    .inputContainer .container .buttonContainer .button:first-child{
+        margin-right: 0;
+    }
+    .inputContainer .container .buttonContainer .button:last-child{
+        margin-left: 0;
+        margin-top: 16px;
+    }
+    .inputContainer .container{
+        padding: 10px 16px 32px 16px;
+    }
+    .inputContainer .container .data{
+        height: calc(100% - 190px);
+    }
+    .outputContainer{
+        padding: 20px 24px 40px 24px;
+    }
+    .outputContainer .container .result{
+        min-height: 80px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 249px){
+    .outputContainer .container .nodata .title{
+        font-size: 20px;
+    }
+    .outputContainer .container .nodata .info{
+        font-size: 12px;
+        
+    }
+}
